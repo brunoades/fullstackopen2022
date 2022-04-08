@@ -1,0 +1,17 @@
+title 0.5: Single page app
+
+note over browser:
+user wright some text on the notes field
+and click the submit button
+end note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+note over browser:
+the POST request contains the new JSON-data
+both content and date
+end note
+server->browser: Status code 201 created
+note over browser:
+the javascript code updates the screen with
+the new value of the json-data
+end note
