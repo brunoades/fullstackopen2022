@@ -44,6 +44,7 @@ const App = () => {
   const handleSelected = () => {
     const anedoct = Math.floor(Math.random() * 7);
     setSelected(anedoct)
+    
   }
   const handleVoted = () => {
     const copy = [...votes]
