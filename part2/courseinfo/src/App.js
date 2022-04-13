@@ -65,7 +65,6 @@ const App = () => {
   const parts = [...course.parts]
   const exercises = []
   parts.map(e => exercises.push(e.exercises))
-
   const total = exercises.reduce((s, p) => s += p)
 
   return (
