@@ -22,6 +22,14 @@ const Part = ({part}) => {
   )
 }
 
+const Total = ({total}) => {
+  return (
+    <>
+      <p>total of {total} exercises</p>
+    </>
+  )
+}
+
 const Course = ({header, content, part}) => {
   return (
     <>
@@ -52,7 +60,14 @@ const App = () => {
         id: 3
       }
     ]
-  } 
+  }
+
+  const parts = [...course.parts]
+  const exercises = []
+  parts.map(e => exercises.push(e.exercises))
+
+  const total = exercises.reduce((s, p) => s += p)
+
   return (
     <>
       <Course
@@ -68,6 +83,10 @@ const App = () => {
         content={course.parts[2].name}
         part={course.parts[2].exercises}
       />
+      <Course
+        total={total}
+      />
+      <Total total={total} />
     </>
   );
 }
