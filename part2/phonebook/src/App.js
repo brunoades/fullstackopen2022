@@ -18,8 +18,13 @@ const App = (props) => {
       important: Math.random() < 0.5,
       id: notes.length + 1,
     }
-    setNotes(notes.concat(noteObject))
+    if (newNote === '') {
+      alert('Nota vazia!')
+    }else {
+      setNotes(notes.concat(noteObject))
     setNewNote('')
+    }
+    
   }
 
   const notesToShow = showAll
