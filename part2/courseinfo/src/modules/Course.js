@@ -22,7 +22,7 @@ const Header = ({header}) => {
   const Total = ({total}) => {
     return (
       <>
-        <p>total of {total} exercises</p>
+        <strong>total of {total} exercises</strong>
       </>
     )
   }
