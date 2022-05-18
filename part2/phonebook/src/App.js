@@ -2,8 +2,9 @@ import { useState } from 'react'
 
 const App = () => {
   const [persons, setPersons] = useState([
-    { name: 'Arto Hellas',
-      id: 1
+    { name: 'Arto Hellas'
+    },
+    { name: 'Bruno Alves'
     }
   ])
 
@@ -12,11 +13,19 @@ const App = () => {
   const addPerson = (event) => {
     event.preventDefault()
     const personObject = {
-      name: newPerson,
-      id: persons.length + 1
+      name: newPerson
     }
-    setPersons(persons.concat(personObject))
-    setNewPerson('')
+
+    const found = persons.find(({name}) => name === personObject.name);
+    if (found) {
+      alert(`${newPerson} is already added to phonebook`)
+      
+    }else {
+      setPersons(persons.concat(personObject))
+      setNewPerson('')
+    }
+
+    
   }
   const handleNameChange = (event) => {
     setNewPerson(event.target.value)
